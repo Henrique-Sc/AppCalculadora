@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AppCalculadora</string>
+    <string name="app_name">App 02 Calculadora</string>
+
+    <string name="number_1">Primeiro número</string>
+    <string name="number_2">Segundo número</string>
+
+    <string name="btn_adic">Adição</string>
+    <string name="btn_sub">Subtração</string>
+    <string name="btn_mult">Multiplicação</string>
+    <string name="btn_div">Divisão</string>
 </resources>
