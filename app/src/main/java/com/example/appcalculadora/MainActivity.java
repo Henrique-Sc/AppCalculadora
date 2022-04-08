@@ -3,12 +3,51 @@ package com.example.appcalculadora;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText edtNumber1, edtNumber2;
+    Button btnAdic, btnSub, btnMult, btnDiv;
+
+    int num1, num2, soma, sub;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        edtNumber1 = findViewById(R.id.edtNumber1);
+        edtNumber2 = findViewById(R.id.edtNumber2);
+
+        btnAdic = findViewById(R.id.btnAdic);
+        btnSub = findViewById(R.id.btnSub);
+        btnMult = findViewById(R.id.btnMult);
+        btnDiv = findViewById(R.id.btnDiv);
+
+        btnAdic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                num1 = Integer.parseInt(edtNumber1.getText().toString());
+                num2 = Integer.parseInt(edtNumber2.getText().toString());
+                soma = num1 + num2;
+
+                Toast.makeText(MainActivity.this, "A soma é " + soma, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                num1 = Integer.parseInt(edtNumber1.getText().toString());
+                num2 = Integer.parseInt(edtNumber2.getText().toString());
+                sub = num1 - num2;
+
+                Toast.makeText(MainActivity.this, "A subtração é " + sub, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
