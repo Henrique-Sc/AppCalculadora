@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     EditText edtNumber1, edtNumber2;
     Button btnAdic, btnSub, btnMult, btnDiv;
 
-    int num1, num2, soma, sub;
+    Double num1, num2, soma, sub, mult, div;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         btnAdic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(edtNumber1.getText().toString());
-                num2 = Integer.parseInt(edtNumber2.getText().toString());
+                num1 = Double.parseDouble(edtNumber1.getText().toString());
+                num2 = Double.parseDouble(edtNumber2.getText().toString());
                 soma = num1 + num2;
 
                 Toast.makeText(MainActivity.this, "A soma é " + soma, Toast.LENGTH_SHORT).show();
@@ -42,11 +42,33 @@ public class MainActivity extends AppCompatActivity {
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num1 = Integer.parseInt(edtNumber1.getText().toString());
-                num2 = Integer.parseInt(edtNumber2.getText().toString());
+                num1 = Double.parseDouble(edtNumber1.getText().toString());
+                num2 = Double.parseDouble(edtNumber2.getText().toString());
                 sub = num1 - num2;
 
                 Toast.makeText(MainActivity.this, "A subtração é " + sub, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnMult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                num1 = Double.parseDouble(edtNumber1.getText().toString());
+                num2 = Double.parseDouble(edtNumber2.getText().toString());
+                mult = num1 * num2;
+
+                Toast.makeText(MainActivity.this, "A multiplicação é " + mult, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                num1 = Double.parseDouble(edtNumber1.getText().toString());
+                num2 = Double.parseDouble(edtNumber2.getText().toString());
+                div = num1 / num2;
+
+                Toast.makeText(MainActivity.this, "A divisão é " + div, Toast.LENGTH_SHORT).show();
             }
         });
     }
